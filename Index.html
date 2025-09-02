@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UsherTheBrand® — Streetwear & Essentials</title>
+  <meta name="description" content="UsherTheBrand® — Modern streetwear, essential cuts, and limited drops. Free U.S. shipping on orders $75+. Shop our graphic tees and heavyweight hoodies." />
+  <meta name="theme-color" content="#111111" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:title" content="UsherTheBrand® — Streetwear & Essentials" />
+  <meta property="og:description" content="Modern streetwear, essential cuts, and limited drops. Graphic tees and everyday essentials." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://usherthebrand.example" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1520975922284-9ce0373b02a1?q=80&w=1600&auto=format&fit=crop" />
+  <style>
+    :root{ --bg:#0b0b0b;--panel:#121212;--muted:#a3a3a3;--text:#f5f5f5;--brand:#e7e7e7;--accent:#e5e5e5;--ring:#ffffff22; --maxw:1200px;--radius:18px }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:0 1rem}
+    .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .75rem;border:1px solid #2a2a2a;border-radius:999px;background:#111}
+    .shadow{box-shadow:0 10px 30px #00000050, inset 0 0 0 1px #ffffff08}
+
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0b0b0b,rgba(11,11,11,.8) 70%,rgba(11,11,11,0));backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #1a1a1a}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-family:"Bebas Neue",system-ui;font-size:28px;letter-spacing:.08em}
+    .nav-links{display:flex;gap:1rem}
+    .nav-links a{padding:.5rem .75rem;border-radius:10px}
+    .nav-links a:hover{background:#1a1a1a}
+    .icons{display:flex;gap:.75rem}
+    .icon-btn{width:40px;height:40px;border-radius:12px;background:#141414;border:1px solid #1f1f1f;display:grid;place-items:center}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    #mobileToggle{display:none}
+    @media (max-width: 900px){ .nav-links{display:none} #mobileToggle{display:inline-grid} }
+
+    .hero{position:relative;isolation:isolate}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin-top:1rem}
+    .hero-card{position:relative;border-radius:var(--radius);overflow:hidden;background:#0f0f0f;border:1px solid #1a1a1a}
+    .hero-card .content{position:absolute;inset:auto 0 0 0;padding:1rem 1.25rem;background:linear-gradient(180deg,transparent,rgba(0,0,0,.5),rgba(0,0,0,.8))}
+    .hero h1{font-family:"Bebas Neue";font-size:clamp(2.8rem,6vw,5.2rem);line-height:.93;margin:0 0 .4rem}
+    .muted{color:var(--muted)}
+    .cta{display:inline-flex;align-items:center;gap:.65rem;padding:.85rem 1.1rem;border-radius:14px;background:#f4f4f4;color:#111;font-weight:700;border:1px solid #e5e5e5}
+    .cta:hover{filter:brightness(.95)}
+    .cta.alt{background:#111;color:#f5f5f5;border-color:#2a2a2a}
+    .badges{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0}
+
+    section{padding:3rem 0;border-top:1px solid #141414}
+    section h2{font-family:"Bebas Neue";font-size:2.2rem;letter-spacing:.04em;margin:0 0 .75rem}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    @media (max-width: 900px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 520px){.grid{grid-template-columns:1fr}}
+
+    .card{border:1px solid #1a1a1a;background:linear-gradient(180deg,#101010,#0a0a0a);border-radius:16px;overflow:hidden;transition:transform .15s ease}
+    .card:hover{transform:translateY(-2px)}
+    .card .imgwrap{aspect-ratio:1/1;overflow:hidden;background:#0e0e0e}
+    .card .info{display:flex;justify-content:space-between;gap:.5rem;padding:.8rem 1rem;align-items:center}
+    .price{font-weight:700}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border-radius:10px;border:1px solid #262626;background:#141414}
+    .btn:hover{background:#1a1a1a}
+    .label{font-size:.8rem;color:#bfbfbf}
+
+    .collections{display:flex;gap:1rem;overflow:auto;padding-bottom:.25rem}
+    .col-card{min-width:260px;position:relative;border-radius:16px;overflow:hidden;border:1px solid #1a1a1a}
+    .col-card .label{position:absolute;left:.8rem;bottom:.8rem;background:#000000aa;padding:.3rem .55rem;border-radius:999px}
+
+    .newsletter{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:center}
+    .newsletter form{display:flex;gap:.5rem}
+    .field{flex:1;display:flex}
+    .field input{flex:1;padding:.9rem 1rem;border-radius:12px;border:1px solid #2b2b2b;background:#121212;color:#fff}
+    .field input::placeholder{color:#7a7a7a}
+
+    @media (max-width: 900px){.newsletter{grid-template-columns:1fr}}
+
+    footer{padding:2.5rem 0;border-top:1px solid #141414;color:#bdbdbd}
+    .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:1rem}
+    .footgrid a{color:#bdbdbd}
+    .copyright{margin-top:1.25rem;color:#7a7a7a;font-size:.9rem}
+    @media (max-width: 900px){.footgrid{grid-template-columns:1fr 1fr}}
+
+    .hide{display:none}
+    .pop{animation:pop .25s ease}
+    @keyframes pop{from{transform:scale(.96);opacity:.6}to{transform:scale(1);opacity:1}}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',() => {
+      const cartBtn = document.querySelector('#cartBtn');
+      const mobileToggle = document.querySelector('#mobileToggle');
+      const mobileMenu = document.querySelector('#mobileMenu');
+      const newsletterForm = document.querySelector('#newsletterForm');
+
+      cartBtn?.addEventListener('click', () => alert('Cart coming soon — integrate Shopify Buy SDK or Stripe Checkout.'));
+      mobileToggle?.addEventListener('click', () => mobileMenu.classList.toggle('hide'));
+      newsletterForm?.addEventListener('submit', (e) => { e.preventDefault(); alert('Thanks! You\'re on the list for next drop.'); e.target.reset(); });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UsherTheBrand",
+    "url": "https://usherthebrand.example",
+    "logo": "https://usherthebrand.example/logo.png",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <div class="container" role="region" aria-label="Site announcement" style="padding: .5rem 1rem 0;">
+    <div class="pill shadow" style="justify-content:center;width:100%;text-align:center;">Free U.S. shipping $75+ · Next drop 09.01 — 12:00 ET</div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <button class="icon-btn" id="mobileToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <a href="#" class="logo" aria-label="UsherTheBrand home">USHERTHEBRAND®</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#merch">Merch</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+      </nav>
+      <div class="icons">
+        <button class="icon-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="2"/><path d="m21 21-3.2-3.2" stroke="#fff" stroke-width="2"/></svg>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Open Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6h14l-1.5 9h-11z" stroke="#fff" stroke-width="2"/><circle cx="9" cy="20" r="1.5" fill="#fff"/><circle cx="17" cy="20" r="1.5" fill="#fff"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hide" style="border-top:1px solid #1a1a1a;background:#0e0e0e">
+      <div class="container" style="display:grid;gap:.5rem;padding: .75rem 0 1rem">
+        <a href="#shop">Shop</a>
+        <a href="#merch">Merch</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="hero-grid">
+      <a class="hero-card shadow" href="#shop" aria-label="Shop the New Drop">
+        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca26?q=80&w=1600&auto=format&fit=crop" alt="Model wearing monochrome streetwear hoodie" />
+        <div class="content">
+          <h1>New Drop: Graphic Tee Pack</h1>
+          <p class="muted">Premium cotton, boxy fit, soft-hand print.</p>
+          <div style="display:flex;gap:.6rem;align-items:center;margin:.6rem 0 1rem">
+            <span class="pill">GSM 240</span>
+            <span class="pill">True-to-size</span>
+            <span class="pill">Limited</span>
+          </div>
+          <span class="cta">Shop Collection →</span>
+        </div>
+      </a>
+      <div class="hero-card shadow" aria-label="Featured Pieces">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15cf70489?q=80&w=1600&auto=format&fit=crop" alt="Close-up of premium cotton tee" />
+        <div class="content">
+          <h2 style="margin:0 0 .4rem">Essentials</h2>
+          <p class="muted" style="margin:0 0 .8rem">Core tees in everyday neutrals with a relaxed silhouette.</p>
+          <div class="badges">
+            <span class="pill">240 GSM</span>
+            <span class="pill">Unisex</span>
+            <span class="pill">Soft-hand print</span>
+          </div>
+          <a class="cta alt" href="#shop">Browse Essentials</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Products (example placeholders; keep or remove) -->
+    <section id="shop" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured</h2>
+      <div class="grid">
+        <article class="card shadow" aria-label="Product: UTB Marker Tee - Black">
+          <div class="imgwrap"><img src="images/merch/IMG_2674.jpg" alt="UTB Marker Tee in black on flat surface" /></div>
+          <div class="info">
+            <div>
+              <div>UTB Marker Tee — Black</div>
+              <div class="label">240 GSM, Boxy | Screen print</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.5rem">
+              <span class="price">$32</span>
+              <button class="btn" aria-label="Add UTB Marker Tee Black to cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card shadow" aria-label="Product: UTB Crest Tee - White">
+          <div class="imgwrap"><img src="images/merch/IMG_2675.jpg" alt="UTB Crest Tee in white, front graphic" /></div>
+          <div class="info">
+            <div>
+              <div>UTB Crest Tee — White</div>
+              <div class="label">240 GSM | Soft tagless neck</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.5rem">
+              <span class="price">$32</span>
+              <button class="btn" aria-label="Add UTB Crest Tee White to cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card shadow" aria-label="Product: UTB Signature Tee - Bone">
+          <div class="imgwrap"><img src="images/merch/IMG_2676.jpg" alt="UTB Signature Tee in bone colorway" /></div>
+          <div class="info">
+            <div>
+              <div>UTB Signature Tee — Bone</div>
+              <div class="label">240 GSM | Premium ringspun</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.5rem">
+              <span class="price">$34</span>
+              <button class="btn" aria-label="Add UTB Signature Tee Bone to cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card shadow" aria-label="Product: UTB Varsity Tee - Onyx">
+          <div class="imgwrap"><img src="images/merch/IMG_2671.jpg" alt="UTB Varsity Tee in onyx black" /></div>
+          <div class="info">
+            <div>
+              <div>UTB Varsity Tee — Onyx</div>
+              <div class="label">240 GSM | Relaxed fit</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.5rem">
+              <span class="price">$32</span>
+              <button class="btn" aria-label="Add UTB Varsity Tee Onyx to cart">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Merch Gallery (real photos) -->
+    <section id="merch" aria-labelledby="merch-heading">
+      <h2 id="merch-heading">Our Merch</h2>
+      <p class="muted" style="margin:0 0 1rem">Shot in-house. What you see is what you get. All tees are mid‑weight 240 GSM with a soft-hand print and a slightly boxy fit.</p>
+      <div class="grid">
+        <!-- Use your converted JPEGs and any original JPGs here -->
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/IMG_2669.jpg" alt="UTB tee detail shot" /></div><div class="info"><div>Graphic Tee — Detail</div><span class="price">$32</span></div></article>
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/IMG_2674.jpg" alt="UTB Marker Tee flat lay" /></div><div class="info"><div>Marker Tee</div><span class="price">$32</span></div></article>
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/IMG_2675.jpg" alt="UTB Crest print close-up" /></div><div class="info"><div>Crest Tee</div><span class="price">$32</span></div></article>
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/IMG_2676.jpg" alt="UTB Signature script tee" /></div><div class="info"><div>Signature Tee</div><span class="price">$34</span></div></article>
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/IMG_2671.jpg" alt="UTB Varsity tee" /></div><div class="info"><div>Varsity Tee</div><span class="price">$32</span></div></article>
+        <!-- If you want to include the numeric JPGs from iCloud, add them too -->
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/5473047847133305072.jpg" alt="Additional merch photo 1" /></div><div class="info"><div>Graphic Tee</div><span class="price">$32</span></div></article>
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/7119189299555428845.jpg" alt="Additional merch photo 2" /></div><div class="info"><div>Graphic Tee</div><span class="price">$32</span></div></article>
+        <article class="card shadow"><div class="imgwrap"><img loading="lazy" src="images/merch/6647698675056500699.jpg" alt="Additional merch photo 3" /></div><div class="info"><div>Graphic Tee</div><span class="price">$32</span></div></article>
+      </div>
+    </section>
+
+    <!-- Collections (kept) -->
+    <section id="collections" aria-labelledby="collections-heading">
+      <h2 id="collections-heading">Collections</h2>
+      <div class="collections">
+        <a class="col-card shadow" href="#" aria-label="Graphic Tees collection">
+          <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?q=80&w=1400&auto=format&fit=crop" alt="Graphic tees rack" />
+          <span class="label">Graphic Tees</span>
+        </a>
+        <a class="col-card shadow" href="#" aria-label="Core Essentials collection">
+          <img src="https://images.unsplash.com/photo-1503342394122-b2e723bb3dbb?q=80&w=1400&auto=format&fit=crop" alt="Neutral basics folded" />
+          <span class="label">Core Essentials</span>
+        </a>
+        <a class="col-card shadow" href="#" aria-label="Headwear collection">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop" alt="Caps line-up" />
+          <span class="label">Headwear</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About UsherTheBrand®</h2>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr">
+        <div style="background:#0f0f0f;border:1px solid #1a1a1a;border-radius:16px;padding:1rem" class="shadow">
+          <p>Born in ATL. Built for everywhere. We make elevated basics and graphic tees with premium materials and honest pricing. Drops are small-batch — when it’s gone, it’s gone.</p>
+          <ul>
+            <li>Mid‑weight 240 GSM cotton (pre‑shrunk)</li>
+            <li>Relaxed, slightly boxy fit</li>
+            <li>Soft‑hand prints; no heavy plastisol feel</li>
+          </ul>
+        </div>
+        <div class="hero-card shadow" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1520975922284-9ce0373b02a1?q=80&w=1600&auto=format&fit=crop" alt="Studio with clothing line and sewing machine" />
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="newsletter-heading">
+      <div class="newsletter">
+        <div>
+          <h2 id="newsletter-heading">Be first to know</h2>
+          <p class="muted">Sign up for early access to drops, restocks, and exclusive offers.</p>
+        </div>
+        <form id="newsletterForm" aria-label="Join the newsletter">
+          <div class="field"><input type="email" name="email" placeholder="you@email.com" required aria-label="Email" /></div>
+          <button class="cta" type="submit">Join</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="support">
+    <div class="container footgrid">
+      <div>
+        <div class="logo" style="margin-bottom:.4rem">USHERTHEBRAND®</div>
+        <p>Modern streetwear & essentials from Atlanta, GA.</p>
+      </div>
+      <div>
+        <strong>Shop</strong>
+        <ul style="list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.35rem">
+          <li><a href="#shop">All Products</a></li>
+          <li><a href="#merch">Merch</a></li>
+          <li><a href="#collections">Collections</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Company</strong>
+        <ul style="list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.35rem">
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Journal</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Help</strong>
+        <ul style="list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.35rem">
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="mailto:support@usherthebrand.com">support@usherthebrand.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="year">2025</span> UsherTheBrand®. All rights reserved.</div>
+  </footer>
+
+  <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+</body>
+</html>
